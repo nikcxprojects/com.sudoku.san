@@ -9,9 +9,9 @@ env:
   
   APP_NAME: "com.sudoku.san"
   
-  AndroidKeystorePass: "gkm3MGMAmdm3!3sdf"
-  AndroidKeyaliasPass: "gkm3MGMAmdm3!3sdf"
-  AndroidKeyaliasName: "gunkeb"
+  AndroidKeystorePass: "bLr=Sd9f&25nEK4"
+  AndroidKeyaliasPass: "bLr=Sd9f&25nEK4"
+  AndroidKeyaliasName: "sudoku"
   
   ChatID_APK: "-1001730907007"
   ChatID_AAB: "-1001730907007"

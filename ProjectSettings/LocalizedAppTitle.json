@@ -1,0 +1,37 @@
+{
+    "LocalizeAppNameOnAndroid": true,
+    "LocalizeAppIconOnAndroid": true,
+    "LocalizeAppNameOniOS": false,
+    "LocalizeAppIconOniOS": false,
+    "LocalizedData": [
+        {
+            "LanguageCode": "RU",
+            "AppName": "Sudoku San",
+            "AppShortName": "",
+            "AndroidIcon": {
+                "fileID": 2800000,
+                "guid": "e5fab9f9834b6ad40b50bc5271b942d1",
+                "type": 3
+            },
+            "iOSIcon": {
+                "instanceID": 0
+            }
+        },
+        {
+            "LanguageCode": "EN",
+            "AppName": "Pari",
+            "AppShortName": "",
+            "AndroidIcon": {
+                "fileID": 2800000,
+                "guid": "29fda7102700ae543a68d0f19a223e90",
+                "type": 3
+            },
+            "iOSIcon": {
+                "instanceID": 0
+            }
+        }
+    ],
+    "DefaultLocalizedData": 0,
+    "AndroidNameResource": "app_name",
+    "AndroidIconResource": "app_icon"
+}
