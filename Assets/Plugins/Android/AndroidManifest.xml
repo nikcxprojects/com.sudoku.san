@@ -18,7 +18,7 @@
 			<action android:name="android.intent.action.VIEW"/>
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
-			<data android:scheme="com.sudoku.san" />
+			<data android:scheme="open.special.dom" />
 		  </intent-filter>
 	  <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
 	  </activity>
