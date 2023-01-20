@@ -14,7 +14,11 @@
 			  <category android:name="android.intent.category.LAUNCHER" />
 			  <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
 		  </intent-filter>
-		  <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+		  <intent-filter>
+			<data android:scheme="com.sudoku.san" />
+			<action android:name="android.intent.action.VIEW" />
+		  </intent-filter>
+	  <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
 	  </activity>
 	  <meta-data android:name="ymp_firebase_default_app_id" android:value="1:496663299324:android:2222a831593fde36d1c379" />
 	  <meta-data android:name="ymp_gcm_default_sender_id" android:value="number:496663299324" />
