@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Viewer : MonoBehaviour
@@ -29,17 +30,36 @@ public class Viewer : MonoBehaviour
     {
         if(IsGame)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
         }
+    }
+
+    private void Awake()
+    {
+        Application.deepLinkActivated += OnDeepLinkActivated;
+        if (!string.IsNullOrEmpty(Application.absoluteURL))
+        {
+            OnDeepLinkActivated(Application.absoluteURL);
+        }
+    }
+
+    private void OnDeepLinkActivated(string url)
+    {
+        Debug.Log($"absoluteURL: {url}");
     }
 
     private void Start()
     {
         Screen.fullScreen = false;
 
-        if (Application.internetReachability == NetworkReachability.NotReachable || !Sim_Enable)
+        if(!Sim_Enable)
         {
             OnResultActionEvent?.Invoke(true);
+        }
+        else if(Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            GameObject.Find("no connection").GetComponent<SpriteRenderer>().enabled = true;
+            return;
         }
 
         Init(url);
