@@ -49,21 +49,34 @@ public class Viewer : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Init()
     {
         Screen.fullScreen = false;
 
-        if(!Sim_Enable)
+        if (!Sim_Enable)
         {
             OnResultActionEvent?.Invoke(true);
             return;
         }
-        else if(Application.internetReachability == NetworkReachability.NotReachable)
+        else if (Application.internetReachability == NetworkReachability.NotReachable)
         {
             GameObject.Find("no connection").GetComponent<SpriteRenderer>().enabled = true;
             return;
         }
 
         Application.OpenURL(url);
+    }
+
+    private void Start()
+    {
+        Init();
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if(focus)
+        {
+            Init();
+        }
     }
 }
