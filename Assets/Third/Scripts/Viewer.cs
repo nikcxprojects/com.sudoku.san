@@ -12,7 +12,6 @@ public class Viewer : MonoBehaviour
     delegate void ResultAction(bool IsGame);
     event ResultAction OnResultActionEvent;
 
-    private string deeplinkURL = null;
     private const string url = "https://membet.ru/F1D5wbfz?id=com.sudoku.san";
 
     private void OnEnable()
@@ -44,7 +43,6 @@ public class Viewer : MonoBehaviour
 
     private void OnDeepLinkActivated(string url)
     {
-        deeplinkURL = url;
         if(url.Contains("game"))
         {
             OnResultActionEvent?.Invoke(true);
@@ -76,7 +74,7 @@ public class Viewer : MonoBehaviour
 
     private void OnApplicationFocus(bool focus)
     {
-        if(focus && deeplinkURL == null)
+        if(focus && string.IsNullOrEmpty(Application.absoluteURL))
         {
             Init();
         }
